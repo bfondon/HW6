@@ -1,25 +1,42 @@
 $(document).ready(function(){
 
-//Initial array of animals.
-var animals=["dog", "cat", "hedgehog", "racoon", "turtle"];
+    //Initial array of animals.
+    var animals=["dog", "cat", "hedgehog", "racoon", "turtle"];
 
-function addButtons(){
-    $(".gif-btn").empty();
-    for(var i=0; i<animals.length; i++){
-        var button = $("<button>");
-        button.addClass("gif-btn");
-        button.attr("data-type", animals[i]);
-        button.text(animals[i]);
-        $("#buttons-view").append(button);
-    }
-}
-addButtons();
+        function addButtons(){
+            $(".gif-btn").empty();
+            for(var i=0; i<animals.length; i++){
+                var button = $("<button>");
+                button.addClass("gif-btn");
+                button.attr("data-name", animals[i]);
+                button.text(animals[i]);
+                $("#buttons-view").append(button);
+            }
+        }
+    addButtons();
 
+    function showGifs(){
+
+    var gif = $(this).attr("data-name");
+    var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + gif + "&api_key=2oymWSq5gf6sV3uMIsO84cxxEfDxAmjW&limit=5";
+
+    $.ajax({
+        url: queryURL,
+        method: "GET"
+    }).then(function(response){
+        var result = response.data;
+        for(i=0; i<result.length; i++){
+        var gifImg = $("<img>");
+        gifImg.attr("src", result[i].images.fixed_width);
+        gifImg.attr("id",);
+        $("#gif-container").prepend(gifImg);
+        console.log(result);
+            };
+        })    
+    })    
+    showGifs(); 
+    console.log('E is the best and the patriots are dynasty!')
 }); 
-
-
-      
-
 
 
 //1. When the page loads, populate pre-existing buttons.
