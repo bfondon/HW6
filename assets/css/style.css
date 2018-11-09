@@ -1,8 +1,39 @@
+* {
+    box-sizing: border-box;
+  }
+
+h1{
+    font-size:40pt;
+    text-align:center;
+    margin:20px;
+    
+}
+
+#buttons-view{
+    text-align:center;
+    margin:20px;
+}
+
+
+#giphy-form{
+    text-align:center;
+    margin:20px;
+}
+
 #gif-container{
-    margin:auto;
-    width:200%;
+   
+    
 }
 
 .gif-btn{
-    margin:40px;
+    margin:5px;
+}
+
+img{
+    margin:5px;
+    float:left;
+}
+
+.display{
+    float:left;
 }

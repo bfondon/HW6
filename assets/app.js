@@ -39,7 +39,7 @@ $(document).ready(function(){
         var gifImg = $("<img>");
         var ratedDisplay = $("<div>");
         ratedDisplay.html(rated);
-        console.log(rated);
+        ratedDisplay.attr("class", "display");
         gifImg.attr("class", "gif-class");
         gifImg.attr("src", result[i].images.fixed_width_still.url);
         gifImg.attr("data-state", "still");
@@ -78,6 +78,3 @@ $(document).ready(function(){
 })
 
 
-//Source for moving gif & source for still image.
-// Loads the still source
-// On click, change to the moving source.
